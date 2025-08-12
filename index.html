@@ -59,8 +59,8 @@
   <header class="fixed w-full z-50 transition-all" :class="{'backdrop-blur-md bg-white/60 dark:bg-slate-900/60 shadow-md': scrolled}">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-3">
-        <div class=" h-2 px-4 py-8 rounded-lg flex items-center justify-center">
-<img src="assets/divoc.png" alt="DIVOC.ID Logo" class="h-10 w-auto">
+<div class="px-4 py-8 rounded-lg flex items-center justify-center">
+<img src="assets/divoc.png" alt="DIVOC.ID Logo" class="h-10 w-auto max-h-15 w-auto object-contain" />
         </div>
         <div>
           <div class="text-lg font-semibold">DIVOC.ID</div>
@@ -97,7 +97,9 @@
     </div>
 
     <!-- Mobile menu (Alpine controlled) -->
-    <div x-show="open" x-transition class="md:hidden">
+    <div x-show="open" x-transition class="md:hidden"
+    x-on:click.outside="open = false">
+            
       <div class="px-6 pb-6 pt-2 space-y-3">
         <a href="#about" class="block py-2">Tentang</a>
         <a href="#services" class="block py-2">Layanan</a>
